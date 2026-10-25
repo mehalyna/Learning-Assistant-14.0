@@ -1,0 +1,30 @@
+{% extends "resources/base.html" %}
+
+{% block title %}Study Resources Board{% endblock %}
+
+{% block content %}
+    <h1>Study Resources Board</h1>
+    <p>Find and share useful resources for your studies.</p>
+
+    <form class="filter-form" method="get">
+        <label for="subject">Filter by subject</label>
+        <input id="subject" name="subject" type="text" value="{{ subject }}">
+        <button type="submit">Show resources</button>
+    </form>
+    {# TODO (Engineering Challenge): submit and apply a subject filter. #}
+
+    {% if resources %}
+        <ul class="resource-list">
+            {% for resource in resources %}
+                <li class="resource-card">
+                    <h2>
+                        <a href="{% url 'resource_detail' resource.pk %}">{{ resource.title }}</a>
+                    </h2>
+                    <p>Subject: {{ resource.subject }}</p>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p class="empty-state">No resources have been added yet.</p>
+    {% endif %}
+{% endblock %}

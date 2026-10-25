@@ -1,0 +1,21 @@
+{% extends "resources/base.html" %}
+
+{% block title %}Delete {{ resource.title }} | Study Resources Board{% endblock %}
+
+{% block content %}
+    <h1>Delete resource</h1>
+    <p>Resource: <strong>{{ resource.title }}</strong></p>
+    {% if feature_incomplete %}
+        <p>This feature is not available yet. No resource has been deleted.</p>
+    {% else %}
+        <p>Deletion is not implemented yet. No resource has been deleted.</p>
+    {% endif %}
+    {% if not feature_incomplete %}
+        <form method="post">
+            {% csrf_token %}
+            <button type="submit">Confirm deletion (not implemented)</button>
+        </form>
+    {% endif %}
+    {# TODO (Engineering Challenge): implement safe deletion after POST confirmation. #}
+    <p><a href="{% url 'resource_detail' resource.pk %}">Return to the resource</a></p>
+{% endblock %}

@@ -1,0 +1,86 @@
+:root {
+    color-scheme: light;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #203040;
+    background: #f5f7fa;
+}
+
+body {
+    margin: 0;
+    line-height: 1.6;
+}
+
+a {
+    color: #145da0;
+}
+
+.site-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1rem max(1.25rem, calc((100% - 52rem) / 2));
+    background: #16324f;
+    color: #fff;
+}
+
+.site-header a {
+    color: #fff;
+}
+
+.site-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+nav {
+    display: flex;
+    gap: 1rem;
+}
+
+.container {
+    max-width: 52rem;
+    margin: 2rem auto;
+    padding: 0 1.25rem;
+}
+
+.resource-list {
+    display: grid;
+    gap: 1rem;
+    padding: 0;
+    list-style: none;
+}
+
+.resource-card,
+.empty-state {
+    padding: 1rem;
+    border: 1px solid #d6dee8;
+    border-radius: 0.4rem;
+    background: #fff;
+}
+
+.resource-card h2 {
+    margin-top: 0;
+}
+
+.filter-form {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 1.5rem 0;
+}
+
+input,
+button {
+    padding: 0.5rem 0.7rem;
+    font: inherit;
+}
+
+@media (max-width: 36rem) {
+    .site-header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}

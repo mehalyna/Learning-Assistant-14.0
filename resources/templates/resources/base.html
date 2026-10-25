@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}Study Resources Board{% endblock %}</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'resources/styles.css' %}">
+</head>
+<body>
+    <header class="site-header">
+        <a class="site-title" href="{% url 'resource_list' %}">Study Resources Board</a>
+        <nav aria-label="Main navigation">
+            <a href="{% url 'resource_list' %}">Home</a>
+            <a href="{% url 'add_resource' %}">Add a resource</a>
+        </nav>
+    </header>
+    <main class="container">
+        {% block content %}{% endblock %}
+    </main>
+</body>
+</html>
